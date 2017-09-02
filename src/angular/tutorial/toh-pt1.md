@@ -171,6 +171,11 @@ list:
 
 <?code-excerpt "lib/app_component.dart (directives)" title?>
 ```
+  import 'package:angular/angular.dart';
+
+  // Add the new package to handle forms!
+  import 'package:angular_forms/angular_forms.dart';
+
   @Component(
     selector: 'my-app',
     /* . . . */
@@ -178,6 +183,21 @@ list:
   )
 ```
 
+Note the additional import of the `angular_forms` package which allows us to us
+the `formDirectives`.
+A new dependency also requires you to update the `pubspec.yaml` and run a `pub get`
+to fetch it.
+
+<?code-excerpt "pubspec.yaml" title?>
+```
+  ###
+  
+  dependencies:
+    angular: ^4.0.0
+    angular_forms: ^1.0.0
+  
+  ###
+```
 Refresh the browser and the app should work again.
 You can edit the hero's name and see the changes reflected immediately in the `<h2>` above the textbox.
 
